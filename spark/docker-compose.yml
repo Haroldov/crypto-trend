@@ -5,12 +5,13 @@ services:
     image: docker.io/bitnami/spark:3.3
     environment:
       - SPARK_MODE=master
+      - SPARK_MASTER_WEBUI_PORT=8888
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
     ports:
-      - '8080:8080'
+      - '8888:8888'
   spark-worker:
     image: docker.io/bitnami/spark:3.3
     environment:
